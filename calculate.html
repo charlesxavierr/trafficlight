@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Interest Calculator</title>
+    <style>
+    	body {
+    		font-family: Arial, sans-serif;
+    		background-color: #f2f2f2;
+    	} 
+    	    
+        input[type="number"], select {
+            width: 15%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+                 
+        }
+
+   	</style>
+</head>
+<body>
+    <h2>Simple Interest Calculator</h2>
+    <form onsubmit="event.preventDefault(); calculateInterest();">
+        Principal Amount: <input type="number" id="principal" required><br>
+        Time (in Years) : <input type="number" id="time" required><br>
+        Interest Rate (in %): <input type="number" id="rate" required><br> 
+        <input type="submit" value="Calculate Interest">
+    </form>
+    <h3 id="result"></h3>
+
+    <script>
+        function calculateInterest() {
+            var principal = document.getElementById("principal").value;
+            var time = document.getElementById("time").value;
+            var rate = document.getElementById("rate").value;
+            var interest = (principal * time * rate) / 100;
+            document.getElementById("result").innerHTML = "Interest: $" + interest;
+        }
+    </script>
+</body>
+</html>
